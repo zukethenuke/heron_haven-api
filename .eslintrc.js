@@ -11,6 +11,7 @@ module.exports = {
              "max": 2,
              "maxBOF": 1
          }],
-         "semi": ["error", "always"]
+         "semi": ["error", "always"],
+         'space-before-function-paren': 'off'
     }
 };
