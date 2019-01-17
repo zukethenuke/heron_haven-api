@@ -20,4 +20,8 @@ module.exports = (app) => {
     app.post('/contact_us',
         ContactUsController.post
     );
+
+    app.get('/contact_us',
+        ContactUsController.getAllContactUsMessages
+    );
 };
