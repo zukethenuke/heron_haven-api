@@ -24,4 +24,8 @@ module.exports = (app) => {
     app.get('/contact_us',
         ContactUsController.getAllContactUsMessages
     );
+
+    app.put('/contact_us/:id',
+        ContactUsController.put
+    );
 };
