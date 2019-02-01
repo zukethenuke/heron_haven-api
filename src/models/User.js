@@ -34,7 +34,8 @@ module.exports = (sequelize, DataTypes) => {
         // city: DataTypes.STRING,
         // state: DataTypes.STRING,
         // zipCode: DataTypes.STRING,
-        // admin: DataTypes.BOOLEAN
+        // admin: DataTypes.BOOLEAN,
+        // notes: DataTypes.TEXT,
     }, {
         hooks: {
             beforeSave: hashpassword
