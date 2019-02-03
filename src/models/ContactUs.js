@@ -7,8 +7,9 @@ module.exports = (sequelize, DataTypes) => {
         selectedOption: DataTypes.STRING,
         message: DataTypes.TEXT,
         type: DataTypes.STRING,
-        read: DataTypes.BOOLEAN,
+        beenRead: DataTypes.BOOLEAN,
         archived: DataTypes.BOOLEAN,
+        deleted: DataTypes.BOOLEAN,
         stared: DataTypes.BOOLEAN,
         notes: DataTypes.TEXT
     });

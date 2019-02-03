@@ -26,16 +26,18 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             unique: true
         },
-        password: DataTypes.STRING
-        // firstName: DataTypes.STRING,
-        // lastName: DataTypes.STRING,
-        // phoneNumber: DataTypes.STRING,
-        // street: DataTypes.STRING,
-        // city: DataTypes.STRING,
-        // state: DataTypes.STRING,
-        // zipCode: DataTypes.STRING,
-        // admin: DataTypes.BOOLEAN,
-        // notes: DataTypes.TEXT,
+        password: DataTypes.STRING,
+        firstName: DataTypes.STRING,
+        lastName: DataTypes.STRING,
+        phoneNumber: DataTypes.STRING,
+        street: DataTypes.STRING,
+        city: DataTypes.STRING,
+        state: DataTypes.STRING,
+        zipCode: DataTypes.STRING,
+        volunteer: DataTypes.BOOLEAN,
+        admin: DataTypes.BOOLEAN,
+        superUser: DataTypes.BOOLEAN,
+        notes: DataTypes.TEXT
     }, {
         hooks: {
             beforeSave: hashpassword
