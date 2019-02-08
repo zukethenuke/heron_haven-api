@@ -2,6 +2,7 @@ const AuthenticationController = require('./controllers/AuthenticationController
 const AuthenticationControllPolicy = require('./policies/AuthenticationControllPolicy');
 const UsersController = require('./controllers/UsersController');
 const ContactUsController = require('./controllers/ContactUsController');
+const FieldTripRequestController = require('./controllers/FieldTripRequestController');
 
 module.exports = (app) => {
     app.post('/register',
@@ -28,4 +29,16 @@ module.exports = (app) => {
     app.put('/contact_us/:id',
         ContactUsController.put
     );
+
+    app.post('/field_trip_request',
+        FieldTripRequestController.post
+    );
+
+    // app.get('/field_trip_request',
+    //     FieldTripRequestController.get
+    // );
+
+    // app.put('/field_trip_request/:id',
+    //     FieldTripRequestController.put
+    // );
 };

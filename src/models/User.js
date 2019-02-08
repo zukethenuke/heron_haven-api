@@ -3,7 +3,6 @@ const bcrypt = Promise.promisifyAll(require('bcrypt'));
 
 function hashpassword (user, options) {
     const SALT_FACTOR = 8;
-    console.log('hashing');
     if (!user.changed('password')) {
         return;
     }
@@ -11,11 +10,9 @@ function hashpassword (user, options) {
     return bcrypt
         .genSaltAsync(SALT_FACTOR)
         .then(salt => {
-            console.log('salt', salt);
             return bcrypt.hashSync(user.password, salt, null);
         })
         .then(hash => {
-            console.log('hash', hash);
             user.setDataValue('password', hash);
         });
 }
