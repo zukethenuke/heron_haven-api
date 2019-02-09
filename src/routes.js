@@ -23,7 +23,7 @@ module.exports = (app) => {
     );
 
     app.get('/contact_us',
-        ContactUsController.getAllContactUsMessages
+        ContactUsController.getAll
     );
 
     app.put('/contact_us/:id',
@@ -34,9 +34,9 @@ module.exports = (app) => {
         FieldTripRequestController.post
     );
 
-    // app.get('/field_trip_request',
-    //     FieldTripRequestController.get
-    // );
+    app.get('/field_trip_request',
+        FieldTripRequestController.getAll
+    );
 
     // app.put('/field_trip_request/:id',
     //     FieldTripRequestController.put

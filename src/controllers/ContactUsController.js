@@ -12,9 +12,8 @@ module.exports = {
         }
     },
 
-    async getAllContactUsMessages(req, res) {
+    async getAll(req, res) {
         try {
-            console.log('*************', ContactUs.findAll());
             const allMessages = await ContactUs.findAll();
             res.send(allMessages);
         } catch (error) {
@@ -31,7 +30,6 @@ module.exports = {
             const contactUs = await ContactUs.findOne({
                 where: { id }
             });
-            console.log('found id', contactUs.id);
             contactUs.update(req.body);
             res.send(contactUs);
         } catch (error) {
