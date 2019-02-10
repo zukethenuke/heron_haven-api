@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         numberAttending: DataTypes.INTEGER,
         groupAges: DataTypes.STRING,
         requestedActivity: DataTypes.STRING,
+        additionalInfo: DataTypes.TEXT,
         beenRead: DataTypes.BOOLEAN,
         archived: DataTypes.BOOLEAN,
         deleted: DataTypes.BOOLEAN,

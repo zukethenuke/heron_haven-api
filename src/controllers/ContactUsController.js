@@ -25,7 +25,6 @@ module.exports = {
 
     async put(req, res) {
         try {
-            console.log('********** update **************', req.body);
             const { id } = req.params;
             const contactUs = await ContactUs.findOne({
                 where: { id }

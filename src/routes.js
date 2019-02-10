@@ -38,7 +38,7 @@ module.exports = (app) => {
         FieldTripRequestController.getAll
     );
 
-    // app.put('/field_trip_request/:id',
-    //     FieldTripRequestController.put
-    // );
+    app.put('/field_trip_request/:id',
+        FieldTripRequestController.put
+    );
 };
