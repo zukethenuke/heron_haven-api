@@ -17,3 +17,9 @@ sequelize.sync() // { force: true } to drop all tables in db
         app.listen(config.port || 8081);
         console.log(`Server started on port ${config.port}`);
     });
+
+app.use((error, req, res, next) => {
+    if (error.code === 'LIMIT_FILE_TYPES') {
+        res.status(422).send({ error: 'File type not allowed' });
+    }
+});

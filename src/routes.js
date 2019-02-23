@@ -4,11 +4,6 @@ const UsersController = require('./controllers/UsersController');
 const ContactUsController = require('./controllers/ContactUsController');
 const FieldTripRequestController = require('./controllers/FieldTripRequestController');
 const SecondSaturdayController = require('./controllers/SecondSaturdayController');
-const multer = require('multer');
-
-const upload = multer({
-    dest: './uploads/2ndSaturday/flyer',
-}).single('file');
 
 module.exports = (app) => {
     app.post('/register',
@@ -49,7 +44,7 @@ module.exports = (app) => {
     );
 
     app.post('/2nd_saturday',
-        upload,
+        SecondSaturdayController.upload(),
         SecondSaturdayController.post
     );
 };
