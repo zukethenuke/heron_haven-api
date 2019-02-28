@@ -45,6 +45,11 @@ module.exports = (app) => {
 
     app.post('/2nd_saturday',
         SecondSaturdayController.upload(),
+        // SecondSaturdayController.blob(),
         SecondSaturdayController.post
+    );
+
+    app.get('/2nd_saturday',
+        SecondSaturdayController.get
     );
 };

@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         destination: DataTypes.STRING,
         encoding: DataTypes.STRING,
         size: DataTypes.INTEGER
+        // uploadedBy: DataTypes.INTEGER,
+        // deletedBy: DataTypes.INTEGER
     });
 
     return secondSaturday;

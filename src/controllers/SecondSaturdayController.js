@@ -4,6 +4,8 @@ const multer = require('multer');
 module.exports = {
     async post(req, res) {
         try {
+            console.log('file', req.file);
+            console.log('blob', req.blob);
             const secondSaturday = await SecondSaturday.create(req.file);
             res.send(secondSaturday);
         } catch (error) {
@@ -16,8 +18,30 @@ module.exports = {
     upload() {
         return multer({
             dest: './uploads/2ndSaturday/flyer',
-            fileFilter
+            fileFilter,
+            limits: {
+                fileSize: 2500000
+            }
         }).single('file');
+    },
+
+    // blob() {
+    //     return multer().single('document');
+    // }
+
+    async get(req, res) {
+        try {
+            const secondSaturday = await SecondSaturday.findAll({
+                limit: 1,
+                order: [['createdAt', 'DESC']]
+            });
+            let filePath = secondSaturday[0].dataValues.path;
+            res.download(filePath);
+        } catch (error) {
+            res.status(500).send({
+                error: 'An error occured while getting the 2nd Saturday Flyer'
+            });
+        }
     }
 };
 

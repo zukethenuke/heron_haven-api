@@ -22,4 +22,7 @@ app.use((error, req, res, next) => {
     if (error.code === 'LIMIT_FILE_TYPES') {
         res.status(422).send({ error: 'File type not allowed' });
     }
+    if (error.code === 'LIMIT_FILE_SIZE') {
+        res.status(422).send({ error: 'File is too big' });
+    }
 });
