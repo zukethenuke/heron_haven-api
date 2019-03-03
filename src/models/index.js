@@ -11,6 +11,8 @@ const sequelize = new Sequelize(
     config.db.options
 );
 
+// comment
+
 fs
     .readdirSync(__dirname)
     .filter(file => file !== 'index.js')
