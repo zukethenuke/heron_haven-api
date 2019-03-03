@@ -4,14 +4,6 @@ const Sequelize = require('sequelize');
 const config = require('../config/config');
 const db = {};
 
-// const sequelize = new Sequelize(
-//     // process.env.DATABASE_URL,
-//     config.db.database,
-//     config.db.user,
-//     config.db.password,
-//     config.db.options
-// );
-
 var sequelize;
 if (process.env.DATABASE_URL) {
     sequelize = new Sequelize(process.env.DATABASE_URL, {
